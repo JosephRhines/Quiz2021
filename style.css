@@ -7,7 +7,7 @@ body {
     width: 700px;
     margin: auto;
     margin-top: 200px;
-    }
+}
 
 .timer {
     background-color: black;
@@ -17,5 +17,19 @@ body {
     border-width: 5px;
     border-color: red;
     float: right ;
+    
+}
+
+.quizbox {
+    background-color: purple;
+    height: 340px;
+    width: 590px;
+    position: absolute;
+    margin-top: 100px;
+    margin-left: 50px;
+    
+    
+    
+    
     
 }
