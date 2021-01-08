@@ -1,5 +1,11 @@
 var timeEl = document.querySelector(".timer")
+var button1 = document.getElementById("1")
+var button2 = document.getElementById("2")
+var button3 = document.getElementById("3")
+var button4 = document.getElementById("4")
 var score = 0;
+var timeLeft = 50;
+var startButton = document.querySelector(".startbutton")
 var questions = [
 {q: "Who one the NBA Finals in 2020", a: "The Lakers", choices:["The Lakers", "The Timberwolves", "The Clippers", "The Suns"]},
 {q: "What NBA player has the most made threes", a: "Ray Allen", choices:["Steph Curry", "Reggie Miller", "Steven Jackson", "Ray Allen"]},
@@ -8,8 +14,11 @@ var questions = [
 {q: "What NBA players has the most steals", a: "John Stockton", choices:["John Stockton", "Kevin Durant", "John Wall", "Jimmy Butler"]}
   
 ];
+//  I referenced the SetTimer in the startButton addEventListener to connect start button to time
+startButton.addEventListener("click", setTimer)
+  
 
-var timeLeft = 50;
+
 // Created function for the countdown timer
 function setTimer() {
    
@@ -21,7 +30,11 @@ var timeInterval = setInterval(function() {
     if(timeLeft === 0) {
      clearInterval(timeInterval);
     }
-} ,1000);
+} ,1000); 
 }
 
-setTimer();
+
+
+
+
+
