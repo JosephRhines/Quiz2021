@@ -1,3 +1,4 @@
+var qdisplay = document.getElementById("qdisplay")
 var timeEl = document.querySelector(".timer")
 var button1 = document.getElementById("1")
 var button2 = document.getElementById("2")
@@ -5,6 +6,7 @@ var button3 = document.getElementById("3")
 var button4 = document.getElementById("4")
 var score = 0;
 var timeLeft = 50;
+var index = 0
 var startButton = document.querySelector(".startbutton")
 var questions = [
 {q: "Who won the NBA Finals in 2020", a: "The Lakers", choices:["The Lakers", "The Timberwolves", "The Clippers", "The Suns"]},
@@ -15,31 +17,49 @@ var questions = [
   
 ];
 //  I referenced the SetTimer in the startButton addEventListener to connect start button to time
-startButton.addEventListener("click", setTimer)
+
   
 
 
 // Created function for the countdown timer
 function setTimer() {
-   
+   timeLeft = 50;
+   clearInterval();
     
 var timeInterval = setInterval(function() {
-    console.log(timeLeft)
+   
     timeLeft--;
     timeEl.textContent = timeLeft;
-    if(timeLeft === 0) {
+    if(timeLeft <= 0) {
      clearInterval(timeInterval);
     }
 } ,1000); 
 }
 
+
 function quizquestions() {
-    
+    qdisplay.textContent = questions[index].q
+    for (let i = 0; i < questions[index].choices.length; i++) {
+        document.getElementById(i+1).textContent= questions[index].choices[i];
+        
+    }
 }
 
 
+startButton.addEventListener("click", function() {
+    index = 0;
+    quizquestions();
+    setTimer();
+    startButton.disabled = true
+});
 
+button1.addEventListener("click", verifyChoice)
+button2.addEventListener("click", verifyChoice)
+button3.addEventListener("click", verifyChoice)
+button4.addEventListener("click", verifyChoice)
 
-
-
-
+function verifyChoice(event) {
+    // verifyChoice needs to verify if the choice is wrong
+    
+    console.log(event.target.textContent)
+}
