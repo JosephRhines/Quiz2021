@@ -1,14 +1,15 @@
-var qdisplay = document.getElementById("qdisplay")
-var timeEl = document.querySelector(".timer")
-var button1 = document.getElementById("1")
-var button2 = document.getElementById("2")
-var button3 = document.getElementById("3")
-var button4 = document.getElementById("4")
-var scoreCard = document.getElementById("scoreCard")
+var qdisplay = document.getElementById("qdisplay");
+var timeEl = document.querySelector(".timer");
+var button1 = document.getElementById("1");
+var button2 = document.getElementById("2");
+var button3 = document.getElementById("3");
+var button4 = document.getElementById("4");
+var scoreCard = document.getElementById("scoreCard");
+var userAnswerEl = document.getElementById("userAnswer");
 
 var timeLeft = 50;
-var index = 0
-var startButton = document.querySelector(".startbutton")
+var index = 0;
+var startButton = document.querySelector(".startbutton");
 var questions = [
 {q: "Who won the NBA Finals in 2020", a: "The Lakers", choices:["The Lakers", "The Timberwolves", "The Clippers", "The Suns"]},
 {q: "What NBA player has the most made threes", a: "Ray Allen", choices:["Steph Curry", "Reggie Miller", "Steven Jackson", "Ray Allen"]},
@@ -69,12 +70,18 @@ function verifyChoice(event)
      console.log(event.target.textContent);
     // verifyChoice needs to verify if the choice is wrong
     if (event.target.textContent == questions[index].a) {
-        
+        userAnswerEl.textContent = "Correct"
     }
 
     else {
            timeLeft = timeLeft -5
+           userAnswerEl.textContent = "Wrong"
     }
+
+    userAnswerEl.setAttribute("class", "userAnswer");
+    setTimeout(function() {
+        userAnswerEl.setAttribute("class", "userAnswer hide")
+    }, 1000);
         index++
         if (index >= questions.length) {
             endGame()

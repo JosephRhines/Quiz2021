@@ -84,5 +84,19 @@ h1 {
         background-color: whitesmoke;
       }
 
+      .userAnswer {
+        font-style: italic;
+        font-size: 120%;
+        margin-top: 20px;
+        padding-top: 10px;
+        color: black;
+        border-top: 2px solid black;
+        text-align: center;
+      }
+
+      .hide {
+          display:none;
+      }
+
 
 
