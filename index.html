@@ -9,10 +9,16 @@
 </head>
 <body>
     <div><a href="highscores.html">View High Scores</a></div>
+    <div id="scoreCard">
+        <h2>Your Score is <span id="userScore"></span></h2>
+        <p>Enter initials: <input type="text" id="initials" max="3"/>
+        <button id="submit">Submit</button>
+        </p>
+       </div>
     <div class="container">
         <div class="timer"></div>
         <div class="quizbox">
-            <h1 id="qdisplay"></h1>
+            <h2 id="qdisplay"></h2>
             <button id="1" class="choice" disabled></button>
             <br>
             <br>
@@ -31,6 +37,8 @@
         
         <button class="startbutton">Start</button>
         </div>
+
+        
     </div>
     <script src="logic.js"></script>
 </body>

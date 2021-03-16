@@ -4,7 +4,8 @@ var button1 = document.getElementById("1")
 var button2 = document.getElementById("2")
 var button3 = document.getElementById("3")
 var button4 = document.getElementById("4")
-var score = 0;
+var scoreCard = document.getElementById("scoreCard")
+
 var timeLeft = 50;
 var index = 0
 var startButton = document.querySelector(".startbutton")
@@ -94,4 +95,20 @@ function endGame() {
     button2.disabled = true
     button3.disabled = true
     button4.disabled = true
+
+    scoreCard.style.display = "block"
+}
+
+var submit = document.getElementById("submit")
+
+submit.addEventListener("click", submitFunction);
+
+
+function submitFunction() {
+    var initials = document.getElementById("initials").value
+    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+    highscores.push({initials:initials, score:timeLeft})
+    window.localStorage.setItem("highscores", JSON.stringify(highscores))
+    window.location.href = "./highscores.html"
+
 }

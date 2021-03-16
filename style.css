@@ -24,6 +24,8 @@ body {
 
 .quizbox {
     background-color: purple;
+    color:whitesmoke;
+    text-align: center;
     height: 340px;
     width: 590px;
     position: absolute;
@@ -45,14 +47,17 @@ body {
 
 .choice {
     background-color: cyan;
-    position:fixed;
-    margin-left: 140px ;
-    margin-top: 40px;
     height: 30px;
     width: 300px;
     
+
 }
 
 h1 {
     text-align: center;
+}
+
+
+#scoreCard {
+    display: none;
 }
