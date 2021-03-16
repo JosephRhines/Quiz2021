@@ -6,6 +6,8 @@ var button3 = document.getElementById("3");
 var button4 = document.getElementById("4");
 var scoreCard = document.getElementById("scoreCard");
 var userAnswerEl = document.getElementById("userAnswer");
+var sfxRight = new Audio("correct.wav");
+var sfxWrong = new Audio("incorrect.wav");
 
 var timeLeft = 50;
 var index = 0;
@@ -71,11 +73,13 @@ function verifyChoice(event)
     // verifyChoice needs to verify if the choice is wrong
     if (event.target.textContent == questions[index].a) {
         userAnswerEl.textContent = "Correct"
+        sfxRight.play();
     }
 
     else {
            timeLeft = timeLeft -5
            userAnswerEl.textContent = "Wrong"
+           sfxWrong.play();
     }
 
     userAnswerEl.setAttribute("class", "userAnswer");
