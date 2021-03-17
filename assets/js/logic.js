@@ -72,13 +72,13 @@ function verifyChoice(event)
      console.log(event.target.textContent);
     // verifyChoice needs to verify if the choice is wrong
     if (event.target.textContent == questions[index].a) {
-        userAnswerEl.textContent = "Correct"
+        userAnswerEl.textContent = "YOUR CORRECT!!!"
         sfxRight.play();
     }
 
     else {
            timeLeft = timeLeft -5
-           userAnswerEl.textContent = "Wrong"
+           userAnswerEl.textContent = "YOUR WRONG!!!"
            sfxWrong.play();
     }
 
