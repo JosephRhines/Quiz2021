@@ -13,8 +13,8 @@ When the page loads the user is presented with a quiz box with disabled buttons 
 
 
 ## Screenshots:
-<img src="quiz2021.jpg">
-<img src="highscores.jpg">
+<img src="./assets/images/quiz2021.jpg">
+<img src="./assets/images/highscores.jpg">
 
 
 
